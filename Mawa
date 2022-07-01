@@ -1,0 +1,55 @@
+def main_apv():
+
+    imt="MRTOO"
+    ak="GVT"
+    os.system('clear')
+    print(logo)
+    try:
+        key1=open('/data/data/com.termux/files/usr/bin/.FSFS-cov', 'r').read()
+    except IOError:
+        os.system("clear")
+        print(logo)
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print ("  Your Token Is Not Approved Already")
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        myid = uuid.uuid4().hex[:20].upper()
+        print ("  YOUR KEY : "+ak+myid+imt)
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        kok=open('/data/data/com.termux/files/usr/bin/.FSFS-cov', 'w')
+        kok.write(myid+imt)
+        kok.close()
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print ("  Send Me Your Key On WhatsApp Approval ")
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        input('\n Press Enter For Approve Your Key ')
+        time.sleep(3.5)
+        tks = 'Dear%20Admin,%20Please%20Apporved%20My%20Key%20To%20Premium%20Version%201.0.0%20My%20%20Key%20%20:%20'+ak+''+myid+''+imt
+        os.system('am start https://wa.me/+2349017624430?text=' + tks)        
+
+    r1=requests.get("https://raw.githubusercontent.com/Rydah300/Paid/main/Apv.txt").text
+    if key1 in r1:
+        sarfraz()
+    else:
+        os.system("clear")
+        print(logo)
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print ("  Your Token Is Not Approved Already")
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print ("  YOUR KEY : "+ak+key1+imt)
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print ("  Send Me Your Key On WhatsApp Approval ")
+        print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        input('\n Press Enter For Approve Your Key ')
+        time.sleep(3.5)
+
+        tks = 'Dear%20Admin,%20Please%20Apporved%20My%20Key%20To%20Premium%20Version%201.0.0%20My%20%20Key%20%20:%20'+ak+''+key1
+
+        os.system('am start https://wa.me/+2349017624430?text=' + tks)
+
+
+
+
+
+
+main_apv()
+
